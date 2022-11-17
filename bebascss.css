@@ -1,0 +1,69 @@
+body{
+    background-color: beige;
+}
+
+h3{
+    color: blue;
+}
+
+/* Tag Selector */
+/* p{
+    color: green;
+} */
+
+/* Id Selector */
+/* #content-1{
+    color: blue;
+} */
+
+/* Attribute Selector */
+a[href]{
+    color: blue;
+}
+
+#content-2{
+    color: blueviolet;
+}
+
+/* Class Selector */
+.class-content-1{
+    color: brown;
+}
+
+
+
+#spec-1{
+    color: brown;
+}
+
+.classSpec-1{
+    color: blueviolet;
+}
+
+#spec-2{
+    color: red;
+}
+
+.mainContent > .secondContent > #spec-3{
+    color: yellow;
+}
+
+#spec-3{
+    color: red;
+}
+
+.palette{
+    color: #FFE1E1;
+}
+
+.bg-first{
+    background-color: #7F669D;
+    background: url('./img/kucing.jpg');
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-transform: uppercase;
+    text-shadow: -4px 4px 4px red;
+}

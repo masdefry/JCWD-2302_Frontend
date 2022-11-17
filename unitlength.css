@@ -1,0 +1,55 @@
+
+/* 
+    Struktur CSS nya
+    harus urut sesuai
+    parent-child yg ada di
+    element.
+*/
+html{
+    font-size: 100px;
+}
+
+/* .div-pertama{
+    
+} */
+
+.div-kedua{
+    font-size: 3rem;
+}
+
+.heading-pertama{
+    font-size: 2rem;
+}
+
+.heading-kedua{
+    font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+.first-div{
+    font-size: 50px;
+}
+
+.second-div{
+   font-size: 3em;
+}
+
+.third-div{
+    font-size: 1.5em;
+}
+
+.first-heading{
+    font-size: 2em;
+}
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="unitlength.css" />
+</head>
+<body>
+    <!-- 
+        em: By default size nya akan dikalikan 16px
+        - Akan mencari ukuran em dari parent nya dan akan berhenti
+        mencari ketika menemukan px dari parent nya.
+        - Kalau tidak menemukan px dari parent nya, maka akan dikalikan
+        dengan 16px
+     -->
+    <div class="first-div">
+        <div class="second-div">
+            <div class="third-div">
+                <h1 class="first-heading">
+                    Purwadhika
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        rem
+        - Hanya membaca ukuran px yg ada di root/html
+     -->
+     <div class="div-pertama">
+        <div class="div-kedua">
+            <h1 class="heading-pertama">
+                Hello, World!
+                <h2 class="heading-kedua">
+                    Haiii!
+                </h2>
+            </h1>
+        </div>
+     </div>
+</body>
+</html>

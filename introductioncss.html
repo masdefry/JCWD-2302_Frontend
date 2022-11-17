@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdction CSS</title>
+    <link rel="stylesheet" href="./bebascss.css" />
+    <style>
+        h2{
+            color: green;
+        }
+
+        a:link{
+            color: blueviolet;
+        }
+
+        a:hover{
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <!-- Inline Style -->
+    <h1 style="color: red;">
+        Hello, World!
+    </h1>
+
+    <!-- Internal Style -->
+    <h2>
+        Hello, Purwadhika
+    </h2>
+
+    <!-- Eksternal Style -->
+    <h3>
+        Hello, JCWD!
+    </h3>
+
+    <p id="content-1" class="class-content-1">
+        Purwadhika Digital School
+    </p>
+
+    <h4 id="content-2">
+        BSD
+    </h4>
+    <h4 id="content-2">
+        JKT
+    </h4>
+    <h4 id="content-2">
+        BTM
+    </h4>
+
+
+    <!-- Spesificity -->
+    <!-- 
+        Spesificity Point 
+        !Important > Inline Styling > Id    > Class > Tag 
+        10000      > 1000           > 100   > 10    > 1
+    -->
+    <h1 id="spec-1" class="classSpec-1">
+        Spesificty-1
+    </h1>
+
+    <h1 id="spec-2" style="color: green;">
+        Spesificity-2
+    </h1>
+
+    <div class="mainContent">
+        <h1>
+            Spesificity-New
+        </h1>
+        <div class="secondContent">
+            <h1 id="spec-3">
+                Spesificity-3
+            </h1>
+        </div>
+    </div>
+
+    <a href="./link.html"></a>
+
+    <!-- Background Color -->
+    <div class="bg-first">
+        <h1>
+            Hello, World!
+        </h1>
+    </div>
+
+    <!-- Font & Text -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae blanditiis, labore voluptatem veniam similique dolore ipsum deleniti totam dignissimos fugiat nesciunt, ea excepturi adipisci cupiditate id iure vitae porro voluptate.
+    </p>
+
+    <!-- Width & Height -->
+    <div style="background-color: grey; width: 100px; height: 100px;">
+        Hello
+    </div>
+
+
+    <!-- Pseudo Class -->
+    <a href="./link.html">Klik disini!</a>
+
+    
+</body>
+</html>
