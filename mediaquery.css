@@ -1,0 +1,39 @@
+/* 
+    Desktop
+    > 768px
+*/
+.heading-1{
+    color: green;
+}
+
+.paragraf-1{
+    background-color: blue;
+}
+
+/* 
+    Tablet 
+    481px - 768px
+*/
+@media only screen and (max-width: 768px) {
+    .heading-1{
+        color: red;
+    }
+
+    .paragraf-1{
+        background-color: red;
+    }
+}
+
+/* 
+    Mobile
+    0px - 480px
+*/
+@media only screen and (max-width: 480px) {
+   .heading-1{
+    color: blue;
+   } 
+
+   .paragraf-1{
+    background-color: grey;
+   }
+}

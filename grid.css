@@ -1,0 +1,109 @@
+.container{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.container div{
+    background-color: blueviolet;
+    font-size: 30px;
+    color: white;
+}
+
+.container div:nth-child(even){
+    background-color: orangered;
+}
+
+.newContainer{
+    height: 500px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 3fr;
+    grid-gap: 10px;
+}
+
+.newContainer div{
+    background-color: blue;
+}
+
+.newContainer div:nth-child(even){
+    background-color: grey;
+}
+
+.content{
+    height: 500px;
+    margin: 100px 0px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.content div{
+    background-color: brown;
+}
+
+.content div:nth-child(even){
+    background-color: cyan;
+}
+
+.box1{
+    grid-column: 1/4;
+}
+
+.box2{
+    grid-column: 4/10;
+}
+
+
+
+.newContent{
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.newContent div{
+    background-color: darkred;
+}
+
+.newContent div:nth-child(even){
+    background-color: yellowgreen;
+}
+
+.nc-box1{
+    grid-column: 1/4;
+}
+
+.nc-box2{
+    grid-column: 4/10;
+}
+
+.nc-box3{
+    grid-column: 1/5;
+    grid-row: 2/4;
+}
+
+
+
+.parent{
+    height: 500px;
+    margin: 100px 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.parent div{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+}
+
+.parent div:nth-child(even){
+    background-color: yellow;
+}
