@@ -1,0 +1,95 @@
+.navbar{
+    background-color: grey;
+    border: 1px solid black;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron{
+    margin-top: 10px;
+    background-color: grey;
+    border: 1px solid black;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.products div{
+    background-color: grey;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aaa{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 300px;
+    grid-gap: 10px;
+}
+
+.aaa div{
+    background-color: grey;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aaa1{
+    grid-row: 1/3;
+}
+
+.aaaflex{
+    display: flex;
+}
+
+.aaaflex div{
+    flex: 1;
+    background-color: grey;
+    border: 1px solid black;
+}
+
+.aaaflex11{
+    margin-right: 10px;
+}
+
+.aaaflex12{
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    .jumbotron{
+        display: none;
+    }
+
+    .products{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    .aaa{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        height: 300px;
+        grid-gap: 10px;
+    }
+ }
