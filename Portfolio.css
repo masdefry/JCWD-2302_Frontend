@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #00005C;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    font-family: 'Sono';
+    height: 60px;
+    color: #EFF5F5;
+}
+
+.navbar .right-menu{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1px;
+}
+
+.navbar .right-menu div{
+    text-align: center;
+}
+
+.navbar .right-menu #btn{
+    text-align: right;
+}
+
+.navbar .right-menu #btn #btn-real{
+    border: 1px solid #4FA095;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
