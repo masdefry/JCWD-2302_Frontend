@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,200;1,100&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
 
 body{
     margin: 0px;
@@ -17,6 +18,7 @@ body{
 
 .navbar .right-menu{
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1px;
 }
@@ -30,7 +32,82 @@ body{
 }
 
 .navbar .right-menu #btn #btn-real{
+    background-color: transparent;
     border: 1px solid #4FA095;
+    color: #EFF5F5;
     padding: 10px 20px;
     border-radius: 5px;
+}
+
+.navbar .right-menu #btn #btn-real:hover{
+    background-color: #0D4C92;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+/* Section2: Jumbotron */
+.jumbotron{
+    display: flex;
+    height: 650px;
+}
+
+.jumbotron .jumbotron-left{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-left .line{
+    border-left: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.jumbotron .main-jumbotron{
+    flex: 5;
+    font-family: 'Sono';
+    color: #4FA095;
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.jumbotron .main-jumbotron div .my-name{
+    font-family: 'Montserrat';
+    font-size: 50px;
+    color: white;
+}
+
+.jumbotron .main-jumbotron div p{
+    font-size: 15px;
+    max-width: 500px;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: justify;
+}
+
+.jumbotron .main-jumbotron div button{
+    background-color: transparent;
+    border: 1px solid #4FA095;
+    color: #EFF5F5;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.jumbotron .jumbotron-right{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-right .email{
+    position: fixed;
+    bottom: 200px;
+    color: white;
+    transform: rotate(90deg);
+    font-family: 'Montserrat';
+}
+.jumbotron .jumbotron-right .line{
+    border-right: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
 }
