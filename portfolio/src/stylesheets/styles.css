@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:ital,wght@0,200;1,100&family=Sono:wght@300&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #00005C;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    font-family: 'Sono';
+    height: 60px;
+    color: #EFF5F5;
+}
+
+.navbar .right-menu{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1px;
+}
+
+.navbar .right-menu div{
+    text-align: center;
+}
+
+.navbar .right-menu div:hover{
+    color: #4FA095;
+    transition: 1s;
+}
+
+.navbar .right-menu #btn{
+    text-align: right;
+}
+
+.navbar .right-menu #btn #btn-real{
+    background-color: transparent;
+    border: 1px solid #4FA095;
+    color: #EFF5F5;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.navbar .right-menu #btn #btn-real:hover{
+    background-color: #0D4C92;
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+/* Section2: Jumbotron */
+.jumbotron{
+    display: flex;
+    height: 650px;
+}
+
+.jumbotron .jumbotron-left{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-left .line{
+    border-left: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.jumbotron .main-jumbotron{
+    flex: 5;
+    font-family: 'Sono';
+    color: #4FA095;
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.jumbotron .main-jumbotron div .my-name{
+    font-family: 'Montserrat';
+    font-size: 50px;
+    color: white;
+}
+
+.jumbotron .main-jumbotron div p{
+    font-size: 15px;
+    max-width: 500px;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: justify;
+}
+
+.jumbotron .main-jumbotron div button{
+    background-color: transparent;
+    border: 1px solid #4FA095;
+    color: #EFF5F5;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.jumbotron .jumbotron-right{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.jumbotron .jumbotron-right .email{
+    position: fixed;
+    bottom: 200px;
+    color: white;
+    transform: rotate(90deg);
+    font-family: 'Montserrat';
+}
+.jumbotron .jumbotron-right .line{
+    border-right: 1px solid white;
+    height: 100px;
+    position: fixed;
+    bottom: 0px;
+}
+
+/* Section3: About Me */
+.about-me{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    padding: 0px 300px;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+.about-me .title{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.about-me .title .line{
+    border-top: 1px solid white;
+    width: 400px;
+    background-color: #00005C;
+    margin-left: 10px;
+}
+
+.about-me div p{
+    max-width: 90%;
+}
+
+.about-me div img{
+    background-color: white;
+    opacity: 0.5;
+}
+
+.about-me div img:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.worked{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0px 400px 100px 400px;
+    font-family: 'Montserrat';
+    color: white;
+    margin-top: 50px;
+}
+
+.worked .title{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+}
+
+.worked .title .line{
+    border-top: 1px solid white;
+    width: 400px;
+    background-color: #00005C;
+    margin-left: 10px;
+}
+
+.worked .sidebar{
+    border-left: 1px solid white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 0px 0px 10px;
+}
+
+.worked .sidebar div:hover{
+    background-color: #000037;
+    opacity: 0.5;
+}
+
+.worked .description div .title{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+.porto{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    padding: 0px 300px;
+    font-family: 'Montserrat';
+    color: white;
+    margin-top: 50px;
+}
+
+.porto .title{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+}
+
+.porto .title .line{
+    border-top: 1px solid white;
+    width: 400px;
+    background-color: #00005C;
+    margin-left: 10px;
+}
+
+.porto-inline{
+    display: absolute;
+}
+
+.porto-inline .image{
+    background-color: grey;
+    width: 550px;
+    height: 300px;
+    border-radius: 10px;
+    z-index: -1;
+    margin-top: -200px;
+}
+
+.porto-inline .description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.porto-inline .description .text{
+    background-color: #000037;
+    padding: 30px 30px;
+    z-index: 1;
+    max-width: 400px;
+}
