@@ -3,8 +3,22 @@ import './stylesheets/styles.css'
 // Import Components
 import Navbar from './components/navbar';
 import Jumbotron from './components/jumbotron';
+import Aboutme from './components/aboutme';
+import Worked from './components/worked';
+import { useState } from 'react';
 
 function App() {
+  const [data, setData] = useState([
+    { year: '2020-2022', company: 'Purwadhika' },
+    { year: '2022-Pensiun', company: 'Telkomsel' }
+  ])
+
+  const [idx, setIdx] = useState([0])
+
+  let getData = (idx) => {
+    setIdx(idx)
+  }
+
   return (
     <div>
       {/* Section1: Navbar */}
@@ -14,28 +28,49 @@ function App() {
       <Jumbotron />
 
       {/* Section3: About Me */}
-      <div class="about-me">
-        <div class="title">
+      <Aboutme />
+
+      {/* Section4: Worked */}
+      {/* <Worked /> */}
+      <div className="worked">
+        <div className="title">
             <h1>
-                01. About Me
+                02. Where Ive Worked
             </h1>
-            <div class="line">
-               
+            <div className="line">
+            
             </div>
         </div>
-        <div>
-            <p>
-                Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
-
-Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.
-
-I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
-            </p>
+        <div className="sidebar">
+            <div >
+                Menu-1 
+            </div>
+            <div onClick={() => getData(1)}>
+                Menu-2
+            </div>
+            <div>
+                Menu-3
+            </div>
+            <div>
+                Menu-4
+            </div>
+            <div>
+                Menu-5
+            </div>
         </div>
-        <div>
-            <img src="./Assets/3248158939.jpg" width="250px" height="250px" style="margin-top: 20px;" />
+        <div className="description">
+            {
+             <div>
+             <p className="title">
+                 {data[idx].company}
+             </p>
+             <p className="desc">
+               {data[idx].year}
+             </p>
+           </div>
+            }
         </div>
-      </div>
+    </div>
     </div>
   );
 }
