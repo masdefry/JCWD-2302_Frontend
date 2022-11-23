@@ -5,7 +5,7 @@ import Kucing from './../assets/3248158939.jpg'
 class Aboutme extends React.Component{
     render(){
         return(
-            <div className="about-me">
+            <div className="about-me" id='aboutme'>
         <div className="title">
             <h1>
                 01. About Me
