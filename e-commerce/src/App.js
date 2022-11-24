@@ -5,7 +5,8 @@ import Navbar from "./components/navbar";
 import './supports/stylesheets/utilities.css'
 
 // import React from 'react';
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Register from "./pages/register/register";
 
 // import Profile from './pages/profile/profile';
 // import Home from './pages/home/home';
@@ -29,6 +30,11 @@ import './supports/stylesheets/utilities.css'
 
 export default function App(){
   return(
-    <Navbar />
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/register' element={<Register />} />
+      </Routes>
+    </>
   )
 }
