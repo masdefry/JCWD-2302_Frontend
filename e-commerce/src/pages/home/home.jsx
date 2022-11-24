@@ -77,6 +77,13 @@ import { Link } from "react-router-dom"
 let Home = () => {
     const [number, setNumber] = useState(0)
     const [angka, setAngka] = useState(123)
+    const [products, setProducts] = useState(
+        [
+            {name: 'Kaos', quantity: 10},
+            {name: 'Sepatu', quantity: 3},
+            {name: 'Celana', quantity: 2}
+        ]
+    )
 
 
     let changeNumber = () => {
@@ -133,6 +140,41 @@ let Home = () => {
             <button onClick={onSubmit}>
                 Submit 
             </button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>No</td>
+                        <td>Product</td>
+                        <td>Quantity</td>
+                        <td>Stock</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        products.map((value, index) => {
+                            return(
+                                <tr>
+                                    <td>{index+1}</td>
+                                    <td>{value.name}</td>
+                                    <td>{value.quantity}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                    {/* <tr>
+                        <td>1</td>
+                        <td>{products[0].name}</td>
+                        <td>{products[0].quantity}</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>{products[1].name}</td>
+                        <td>{products[1].quantity}</td>
+                    </tr> */}
+                </tbody>
+            </table>
+
         </>
     )
 }
