@@ -28,13 +28,28 @@ import Register from "./pages/register/register";
 
 // export default App;
 
+// export default function App(){
+//   return(
+//     <>
+//       <Navbar />
+//       <Routes>
+//         <Route path='/register' element={<Register />} />
+//       </Routes>
+//     </>
+//   )
+// }
+
 export default function App(){
   return(
     <>
-      <Navbar />
-      <Routes>
-        <Route path='/register' element={<Register />} />
-      </Routes>
+      <div className="row">
+        <div className="bg bg-primary col-12 col-md-6">
+          AAA
+        </div>
+        <div className="bg bg-warning col-12 col-md-6">
+          BBB
+        </div>
+      </div>
     </>
   )
 }
