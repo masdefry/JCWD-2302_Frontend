@@ -1,0 +1,13 @@
+{
+    "users": [
+        { "username": "ryandefryan", "email": "ryan@gmail.com", "password": "abc123" },
+        { "username": "anjar", "email": "anjar@gmail.com", "password": "pass321" },
+        { "username": "tito", "email": "tito@gmail.com", "password": "123hello" }
+    ],
+
+    "products": [
+        { "username": "ryandefryan", "email": "ryan@gmail.com", "password": "abc123" },
+        { "username": "anjar", "email": "anjar@gmail.com", "password": "pass321" },
+        { "username": "tito", "email": "tito@gmail.com", "password": "123hello" }
+    ]
+}

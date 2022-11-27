@@ -1,5 +1,3 @@
-import { Flex, Box, Spacer, Text, Button } from '@chakra-ui/react'
-
 // Logo
 import Logo from './../supports/assets/logo.png'
 
@@ -11,11 +9,10 @@ import {Link, useLocation} from 'react-router-dom'
 
 export default function Navbar(){
     const location = useLocation() // Digunakan untuk mendapatkan pathname
-    console.log(location)
     return(
         <>
-            <Flex px='50px' py='20px' className='navbar'>
-                <Flex alignItems='center' w='50%'>
+            <div className='navbar flex px-10'>
+                <div className='flex items-center'>
                     <Link to='/'>
                         <img src={Logo} width='50px' height='50px' />
                     </Link>
@@ -24,41 +21,42 @@ export default function Navbar(){
                         null
                         :
                         <>
-                            <Text pl='30px' fontWeight='bold'>
+                            <span className='pl-10 font-bold'>
                                 Cards 
-                            </Text>
-                            <Text pl='30px' fontWeight='bold'>
+                            </span>
+                            <span className='pl-10 font-bold'>
                                 Order 
-                            </Text>
-                            <Text pl='30px' fontWeight='bold'>
+                            </span>
+                            <span className='pl-10 font-bold'>
                                 Gift
-                            </Text>
+                            </span>
                         </>
                     }
-                </Flex>
-                <Spacer />
-                <Flex alignItems='center'>
+                </div>
+                <div className='flex'>
                     {
                         location.pathname === '/register'?
                         null
                         :
                         <>
-                            <MdLocationOn />
-                            <Text mr='30px' fontWeight='bold'>
-                                Find a store
-                            </Text>
-                            <Button mr='20px' size='md' borderRadius='full' variant='ghost' style={{backgroundColor: 'white', color: 'black', border: '1px solid black'}}>
+                            <div className='flex items-center'>
+                                <MdLocationOn />
+                                <span className='mr-10 font-bold'>
+                                    Find a store
+                                </span>
+                            </div>
+                            <button className='my-bg-dark my-light rounded-full mr-3 px-3 py-2'>
                                 Sign in
-                            </Button>
-                            <Button size='md' borderRadius='full' variant='ghost' style={{backgroundColor: 'black', color: 'white'}}>
+                            </button>
+                            <button className='my-dark rounded-full px-3 py-2' style={{border: '1px solid black'}}>
                                 <Link to='/register'>
                                     Join now
                                 </Link>
-                            </Button>
+                            </button>
                         </>
                     }
-                </Flex>
-            </Flex>
+                </div>
+            </div>
         </>
     )
 }

@@ -1,43 +1,77 @@
-import { Flex, Box, Spacer, Text, Button, Hide, Heading, Card, CardBody, Input } from '@chakra-ui/react'
+import './register.css'
 
-import {useEffect} from 'react';
+import {useRef, useState} from 'react';
+
+import axios from 'axios';
 
 export default function Register(){
+    const [disabledButton, setDisabledButton] = useState(false)
+
+    const username = useRef()
+    const email = useRef()
+    const password = useRef()
+
+    let onSubmit = async() => {
+        let inputUsername = username.current.value 
+        let inputEmail = email.current.value 
+        let inputPassword = password.current.value 
+        try {
+            setDisabledButton(true)
+            let checkEmail = await axios.get(`http://localhost:5000/users?email=${inputEmail}`)
+            let checkUsername = await axios.get(`http://localhost:5000/users?username=${inputUsername}`)
+            
+            if(checkEmail.data.length === 0 && checkUsername.data.length === 0){
+                // Post
+                let register = await axios.post('http://localhost:5000/users', {username: inputUsername, email: inputEmail, password: inputPassword})
+            }else{
+                throw { message: 'Email/username already register' }
+            }
+        } catch (error) {
+            console.log(error.message)
+        }finally{
+            setDisabledButton(false)
+        }
+        
+    }
+
     return(
-        <Flex flexDirection='column' alignItems='center' py='50px'>
-            <Heading size='lg'>
+        <div  className="flex flex-col items-center py-20">
+            <h1 className="my-fs-25 font-bold">
                 Create an account
-            </Heading>
-            <Heading size='xs' mt='30px' className='my-grey'>
-                STARBUCKS® REWARDS
-            </Heading>
-            <Text mt='30px' style={{maxWidth: '700px', textAlign: 'center'}}>
-                Join Starbucks Rewards to earn Stars for free food and drinks, any way you pay. Get access to mobile ordering, a birthday Reward, and moremore.
-            </Text>
-            <Card mt='30px' w='800px' px='100px'>
-                <CardBody>
-                    <Text>
-                        * indicates required field
-                    </Text>
-
-                    <Heading size='md' mt='30px'>
-                        Personal Information
-                    </Heading>
-                    <Input placeholder='username' size='md' mt='10px' />
-
-                    <Heading size='md' mt='30px'>
-                        Security Information
-                    </Heading>
-                    <Input placeholder='email' size='md' mt='10px' />
-                    <Input placeholder='password' size='md' mt='10px' />
-
-                    <Flex justifyContent='end'>
-                        <Button mt='30px' size='md' borderRadius='full' variant='ghost' style={{backgroundColor: '#00704A', color: 'white'}}>
-                            Register now
-                        </Button>
-                    </Flex>
-                </CardBody>
-            </Card>
-        </Flex>
+            </h1>
+            <h1 className="my-fs-15 my-grey mt-5 font-bold">
+                PURWADHIKA® REWARDS
+            </h1>
+            <p className="my-grey mt-3" style={{maxWidth: '600px', textAlign: 'center'}}>
+                Join Purwadhika Rewards to earn Stars for free food and drinks, any way you pay. Get access to mobile ordering, a birthday Reward, and moremore.
+            </p>
+            <div className="cards mt-20 px-20 py-10 w-2/5 rounded-md flex flex-column">
+                <p className='font-bold'>
+                * indicates required field
+                </p>
+                <h1 className='my-fs-20 mt-5 mb-3 font-bold'>
+                    Personal Information
+                </h1>
+                <input ref={username} type='text' placeholder='Input you username' className='py-2 px-2 w-100 rounded-md' style={{border: '1px solid grey'}} />
+                <h1 className='my-fs-20 mt-5 mb-3 font-bold'>
+                    Account Security
+                </h1>
+                <input ref={email} type='text' placeholder='Input you email' className='py-2 px-2 w-100 rounded-md' style={{border: '1px solid grey'}} />
+                <input ref={password} type='text' placeholder='Input you password' className='py-2 px-2 w-100 rounded-md mt-3' style={{border: '1px solid grey'}} />
+                <button disabled={disabledButton} onClick={onSubmit} className='my-bg-main my-light px-3 py-3 mt-3 rounded-full self-end'>
+                    {disabledButton? 'Loading' : 'Register now'}
+                </button>
+            </div>
+        </div>
     )
 }
+
+
+
+// PR
+// Register:
+// Lakukan validasi untuk email & password (min. 6 karakter, dan includes angka)
+// Apabila validasi error, tampilkan error nya di bawah button (boleh menggunakan toast, alert, dsb)
+// Disabled button apabila salah satu inputan user masih kosong
+// Login:
+// Selesaikan layouting login dan proses axios login nya
