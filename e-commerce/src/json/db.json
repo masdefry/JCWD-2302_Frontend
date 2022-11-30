@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ryan",
+      "email": "ryan@gmail.com",
+      "password": "abc123"
+    },
+    {
+      "username": "",
+      "email": "ryan01@gmail.com",
+      "password": "",
+      "id": 2
+    },
+    {
+      "username": "ryannnn",
+      "email": "ryannn@gmail.com",
+      "password": "asasasa",
+      "id": 3
+    },
+    {
+      "username": "abc",
+      "email": "abc",
+      "password": "asa",
+      "id": 4
+    },
+    {
+      "username": "nayr",
+      "email": "nayr@gmail.com",
+      "password": "abcdef123",
+      "id": 5
+    },
+    {
+      "username": "ryannn",
+      "email": "ryannn",
+      "password": "abc123a12",
+      "id": 6
+    },
+    {
+      "username": "asasas",
+      "email": "asasas",
+      "password": "asasasas121331",
+      "id": 7
+    },
+    {
+      "username": "asasasa",
+      "email": "asaasas",
+      "password": "asasasa123",
+      "id": 8
+    },
+    {
+      "username": "asasas123",
+      "email": "asas123",
+      "password": "asasvvsdas123",
+      "id": 9
+    }
+  ],
+
+
+
+  "products": [
+   {
+    "id": 1,
+    "name": "Americano",
+    "size": [
+      {"option": "Short", "calories": 5, "cup": "8 fl oz", "price": 30000},
+      {"option": "Tall", "calories": 10, "cup": "12 fl oz", "price": 35000},
+      {"option": "Grande", "calories": 15, "cup": "16 fl oz", "price": 38000}
+    ],
+    "topping": [
+      "Cinnamon Powder", "Salted Caramel Foam", "Chocolate Cream",
+      "Red and Green Sprinkle", "Cinamon Dolce Sprinkle"
+    ],
+    "sugar": ["Less", "Normal", "More"],
+    "image": "https://www.starbucksathome.com/id/sites/default/files/2021-03/3-CaffeAmericano_LongShadow_Cream_1.png"
+   }
+  ]
+}
