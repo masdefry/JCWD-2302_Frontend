@@ -7,15 +7,60 @@
       "password": "abc123"
     },
     {
-      "id": 2,
-      "username": "tito",
-      "email": "tito@gmail.com",
-      "password": "abc123"
+      "username": "ryanryan1",
+      "email": "ryan01@gmail.com",
+      "password": "abcdefg123",
+      "id": 2
+    },
+    {
+      "username": "username1",
+      "email": "rafi@gmail.com",
+      "password": "123qwerty",
+      "id": 3
+    },
+    {
+      "username": "raihannn",
+      "email": "raihan@gmail.com",
+      "password": "asdasd",
+      "id": 4
+    },
+    {
+      "username": "tonooo",
+      "email": "tonooo@gmail.com",
+      "password": "qwerty12345",
+      "id": 5
+    },
+    {
+      "username": "rezaaa",
+      "email": "rezaaa@gmail.com",
+      "password": "rezaaaaa12345",
+      "id": 6
+    },
+    {
+      "username": "ranii",
+      "email": "raniiii@gmail.com",
+      "password": "raniiii12345",
+      "id": 7
+    },
+    {
+      "username": "wendi",
+      "email": "wendi@gmail.com",
+      "password": "wendiiiii123456",
+      "id": 8
+    },
+    {
+      "username": "qerqerq",
+      "email": "qerqerqerq",
+      "password": "qwerqerqwer1234",
+      "id": 9
+    },
+    {
+      "username": "raihan",
+      "email": "raihan123@gmail.com",
+      "password": "raihan123",
+      "id": 10
     }
   ],
-
-
-
   "products": [
     {
       "id": 1,

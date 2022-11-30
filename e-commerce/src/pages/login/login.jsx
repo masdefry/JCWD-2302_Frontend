@@ -2,31 +2,22 @@ import {useRef} from 'react'
 
 import axios from 'axios'
 
-import toast, { Toaster } from 'react-hot-toast';
+import { Navigate } from 'react-router-dom';
 
-export default function Login(){
+import { useEffect, useState } from 'react';
+
+export default function Login(props){
 
     const username = useRef()
     const password = useRef()
 
-    let onLogin = async() => {
-        try {
-            // Step0. Get Value Input
-            let inputUsername = username.current.value 
-            let inputPassword = password.current.value
-            // Step1. Check is Username & Password exist?
-            let response = await axios.get(`http://localhost:5000/users?username=${inputUsername}&password=${inputPassword}`)
-            if(response.data.length === 0) throw { message: 'Account not found' } // If data not found, throw error
-
-            toast('Login Success.');
-        } catch (error) {
-            toast(error.message);
-        }
+    if(props.isRedirect.redirect){
+        return <Navigate to='/' />
     }
 
     return(
         <div className="flex flex-col items-center">
-            <h1 className="flex justify-center mt-16 font-extrabold text-2xl ">
+            <h1 className="flex justify-center mt-16 font-bold text-2xl ">
                 Sign in or create an account
             </h1>
             <div className="mt-8 flex flex-col items-center w-2/6 self-center my-bg-light drop-shadow-lg rounded-xl">
@@ -46,12 +37,11 @@ export default function Login(){
                     Forgot your password?
                 </p>
                 <div className="mt-10 self-end mr-10 ">
-                    <button onClick={onLogin} className="my-bg-main px-7 py-3 rounded-full my-light text-xl mb-10 drop-shadow-lg font-bold">
+                    <button onClick={() => props.myFunc.onLogin(username.current.value, password.current.value)} className="my-bg-main px-7 py-3 rounded-full my-light mb-10 drop-shadow-lg">
                         Sign In
                     </button>
                 </div>
             </div>
-            <Toaster />
     </div>
 
     )
