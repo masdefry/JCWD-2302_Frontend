@@ -15,11 +15,15 @@
   ],
 
 
+  "category": ["Drinks", "Snack"],
+
+
 
   "products": [
     {
       "id": 1,
       "name": "Americano",
+      "category": "Drinks",
       "size": [
         {
           "option": "Short",
