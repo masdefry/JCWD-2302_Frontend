@@ -20,7 +20,7 @@ export default function Login(props){
             <h1 className="flex justify-center mt-16 font-bold text-2xl ">
                 Sign in or create an account
             </h1>
-            <div className="mt-8 flex flex-col items-center w-2/6 self-center my-bg-light drop-shadow-lg rounded-xl">
+            <div className="mt-8 flex flex-col items-center w-2/6 self-center cards drop-shadow-lg rounded-xl">
                 <p className="text-lg self-start ml-20 pt-10 my-dark">
                     <span className="my-main font-bold">*</span> indicates required field
                 </p>

@@ -5,8 +5,9 @@ import {useRef, useState} from 'react';
 import axios from 'axios';
 
 import toast, { Toaster } from 'react-hot-toast';
+import { Navigate } from 'react-router-dom';
 
-export default function Register(){
+export default function Register(props){
     const [disabledButton, setDisabledButton] = useState(false)
     const [message, setMessage] = useState('')
 
@@ -50,6 +51,10 @@ export default function Register(){
             setDisabledButton(false)
         }
         
+    }
+
+    if(props.isRedirect.redirect){
+        return <Navigate to='/' />
     }
 
     return(

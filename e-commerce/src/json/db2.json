@@ -61,8 +61,7 @@
       "id": 10
     }
   ],
-
-  "category": ["Drink", "Snack", "Food"],
+  "category": ["Drink", "Snack", 2],
   
   "products": [
     {

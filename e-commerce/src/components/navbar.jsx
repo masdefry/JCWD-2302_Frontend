@@ -3,12 +3,14 @@ import Logo from './../supports/assets/logo.png'
 
 import './navbar.css'
 
-import {MdLocationOn} from 'react-icons/md'
+import {MdLocationOn, MdOutlineAccountCircle} from 'react-icons/md'
 
 import {Link, useLocation} from 'react-router-dom'
 
 export default function Navbar(props){
     const location = useLocation() // Digunakan untuk mendapatkan pathname
+
+    
     return(
         <div>
             <div className='navbar flex px-10 w-100'>
@@ -49,7 +51,14 @@ export default function Navbar(props){
                             </div>
                             {
                                 props.data.username?
-                                    props.data.username 
+                                    <div className='flex items-center'>
+                                        <div className='font-bold'>
+                                            {props.data.username} 
+                                        </div>
+                                        <div className='my-fs-20 mt-1 ml-1'>
+                                            <MdOutlineAccountCircle onClick={props.myFunc.onLogout} />
+                                        </div>
+                                    </div>
                                 :
                                     <>
                                         <button className='my-bg-dark my-light rounded-full mr-3 px-3 py-2'>

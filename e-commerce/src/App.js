@@ -21,6 +21,7 @@ export default function App(){
   const [redirect, setRedirect] = useState(false)
 
   useEffect(() => {
+    console.log('Appjs Jalan')
     checkIsLogin()
   }, [])
 
@@ -30,6 +31,7 @@ export default function App(){
       if(getTokenId){
         let response = await axios.get(`http://localhost:5000/users?id=${getTokenId}`)
         setUsername(response.data[0].username)
+        setRedirect(true)
       }
     } catch (error) {
       
@@ -53,12 +55,18 @@ export default function App(){
       }
   }
 
+  let onLogout =() => {
+    localStorage.removeItem('token')
+    setRedirect(false)
+    setUsername('')
+  }
+
   return(
     <>
-      <Navbar data={{username}} />
+      <Navbar data={{username}} myFunc={{onLogout}} />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/register' element={<Register />} />
+          <Route path='/register' element={<Register isRedirect={{redirect}} />} />
           <Route path='/login'  element={<Login myFunc={{onLogin}} isRedirect={{redirect}} />} />
           <Route path='/menu'  element={<Menu />} />
         </Routes>
