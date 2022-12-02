@@ -8,6 +8,7 @@ import Register from "./pages/register/register";
 import Login from './pages/login/login'
 import Home from './pages/home/home'
 import Menu from './pages/menu/menu';
+import DetailProduct from './pages/detail/detail';
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
@@ -69,6 +70,7 @@ export default function App(){
           <Route path='/register' element={<Register isRedirect={{redirect}} />} />
           <Route path='/login'  element={<Login myFunc={{onLogin}} isRedirect={{redirect}} />} />
           <Route path='/menu'  element={<Menu />} />
+          <Route path='/product/:id'  element={<DetailProduct />} />
         </Routes>
       <Toaster />
     </>

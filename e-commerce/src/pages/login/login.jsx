@@ -20,29 +20,29 @@ export default function Login(props){
             <h1 className="flex justify-center mt-16 font-bold text-2xl ">
                 Sign in or create an account
             </h1>
-            <div className="mt-8 flex flex-col items-center w-2/6 self-center cards drop-shadow-lg rounded-xl">
-                <p className="text-lg self-start ml-20 pt-10 my-dark">
-                    <span className="my-main font-bold">*</span> indicates required field
+
+                
+
+            <div className="cards mt-10 px-20 py-10 w-2/5 rounded-md flex flex-column">
+                <p className='font-bold'>
+                * indicates required field
                 </p>
-                <input ref={username} type='text' placeholder='* Username or email address' required className="border-solid border-2 border-slate-300 rounded-md px-2 py-2 w-3/4 mt-5" />
-                <input ref={password} type='password' placeholder='* Password' required className="border-solid border-2 border-slate-300 rounded-md px-2 py-2 w-3/4 mt-10 mb-10" />
-                <div className="self-start ml-20 text-lg mb-5">
-                    <input type="checkbox" value="" className="w-6 h-6 text-green-600 bg-gray-100 rounded border-gray-300  dark:bg-gray-700 dark:border-gray-600 focus:ring-transparent" />
-                    <label className="ml-2 text-md text-gray-900 dark:text-gray-300">Keep me signed in. <span className="my-main font-bold underline hover:no-underline ">Details</span></label>
-                </div>
-                <p className="my-main underline hover:no-underline font-bold self-start ml-20">
+                <h1 className='my-fs-20 mt-5 mb-3 font-bold'>
+                    Personal Information
+                </h1>
+                <input ref={username} type='text' placeholder='Input you username' className='py-2 px-2 w-100 rounded-md' style={{border: '1px solid grey'}} />
+                <input ref={password} type='text' placeholder='Input you password' className='py-2 px-2 w-100 rounded-md mt-3' style={{border: '1px solid grey'}} />
+                <p className="my-main underline hover:no-underline font-bold self-start mt-3">
                     Forgot your username?
                 </p>
-                <p className="my-main underline hover:no-underline font-bold self-start ml-20 mt-1">
+                <p className="my-main underline hover:no-underline font-bold self-start mt-1">
                     Forgot your password?
                 </p>
-                <div className="mt-10 self-end mr-10 ">
-                    <button onClick={() => props.myFunc.onLogin(username.current.value, password.current.value)} className="my-bg-main px-7 py-3 rounded-full my-light mb-10 drop-shadow-lg">
-                        Sign In
-                    </button>
-                </div>
+                <button onClick={() => props.myFunc.onLogin(username.current.value, password.current.value)} className='my-bg-main my-light px-4  py-3 mt-3 rounded-full self-end'>
+                    Login
+                </button>
             </div>
-    </div>
+        </div>
 
     )
 }
