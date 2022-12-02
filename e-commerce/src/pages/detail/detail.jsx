@@ -1,18 +1,29 @@
 import axios from "axios"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function DetailProduct(){
     const productId = useParams()
+    const selectSize = useRef()
+    const selected = useRef()
     const [data, setData] = useState(null)
+    const [sizeToShow, setSizeToShow] = useState(0)
 
     let onGetData = async() => {
         try {
             let response = await axios.get(`http://localhost:5000/products/${productId.id}`)
+            console.log(response)
             setData(response.data)
         } catch (error) {
             
         }
+    }
+
+    let onSelectSize = () => {
+        let indexSelectedSize = selectSize.current.value
+        console.log(indexSelectedSize)
+        setSizeToShow(indexSelectedSize)
+
     }
 
     useEffect(() => {
@@ -41,10 +52,10 @@ export default function DetailProduct(){
                         {data.name}
                     </h1>
                     <h1 className="basis-3/5 my-fs-25 mt-2">
-                        {data.size[0].calories} Calories
+                        {data.size[sizeToShow].calories} Calories
                     </h1>
                     <h1 className="basis-3/5 my-fs-25 mt-2">
-                        Rp. {(data.size[0].price).toLocaleString()}
+                        Rp. {(data.size[sizeToShow].price).toLocaleString()}
                     </h1>
                 </div>
             </div>
@@ -53,12 +64,11 @@ export default function DetailProduct(){
                     <h1 className="my-fs-25 font-bold pb-2" style={{ borderBottom: '3px solid silver' }}>
                         Size Options
                     </h1>
-                    <select id="countries" className="mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Choose a size</option>
+                    <select ref={selectSize} onClick={onSelectSize} className="mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         {
                             data.size.map((value, index) => {
                                 return(
-                                    <option value={value.option}>{value.option}</option>
+                                    <option key={index} value={index}>{value.option}</option>
                                 )
                             })
                         }
@@ -69,7 +79,6 @@ export default function DetailProduct(){
                             Topping
                     </h1>
                     <select id="countries" className="mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Choose a size</option>
                         {data.topping.map((value, index) => {
                             return(
                                 <option value={value}>{value}</option>
@@ -77,17 +86,23 @@ export default function DetailProduct(){
                         })}
                     </select>
 
-                    <h1 className="my-fs-25 font-bold pb-2 mt-3" style={{ borderBottom: '3px solid silver' }}>
-                        Sugar
-                    </h1>
-                    <select id="countries" className="mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Choose a size</option>
-                        {data.sugar.map((value, index) => {
-                            return(
-                                <option value={value}>{value}</option>
-                            )
-                        })}
-                    </select>
+                    {
+                        data.sugar?
+                        <>
+                            <h1 className="my-fs-25 font-bold pb-2 mt-3" style={{ borderBottom: '3px solid silver' }}>
+                                Sugar
+                            </h1>
+                            <select id="countries" className="mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                {data.sugar.map((value, index) => {
+                                    return(
+                                        <option value={value}>{value}</option>
+                                    )
+                                })}
+                            </select>
+                        </>
+                    :
+                        null
+                    }
                 </div>
             </div>
         </div>
