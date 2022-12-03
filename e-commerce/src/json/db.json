@@ -61,9 +61,11 @@
       "id": 10
     }
   ],
-
-  "category": ["Drink", "Snack", "Food"],
-  
+  "category": [
+    "Drink",
+    "Snack",
+    "Food"
+  ],
   "products": [
     {
       "id": 1,
@@ -764,6 +766,26 @@
         "Sriracha"
       ],
       "image": "https://globalassets.starbucks.com/assets/0612427b8d134a098b6f7457fdac44d2.jpg?impolicy=1by1_medium_630"
+    }
+  ],
+  "cart": [
+    {
+      "idProduct": 1,
+      "indexSize": 0,
+      "indexTopping": 0,
+      "indexSugar": 0,
+      "quantity": 2,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "idProduct": 2,
+      "indexSize": 0,
+      "indexTopping": 0,
+      "indexSugar": 0,
+      "quantity": 4,
+      "userId": 1,
+      "id": 2
     }
   ]
 }
