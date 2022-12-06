@@ -205,7 +205,3 @@ export default function Sidebar(){
 // b. <link rel="stylesheet" type="text/css" src="externalStylesheet.css">
 // c. <stylesheet src="externalStylesheet.css"></stylesheet>
 // d. <stylesheet>externalStylesheet.css</stylesheet>
-
-
-
-// 20. Berikut ini keuntungan ketika kita menggunakan sebuah CSS FRAMEWORK, yaitu?
