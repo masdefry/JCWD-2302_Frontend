@@ -62,6 +62,15 @@ export default function Home(props){
         }
     }
 
+    let onDelete = async(id) => {
+        try {
+            await axios.delete(`http://localhost:5000/tweet/${id}`)
+            onGetData()
+        } catch (error) {
+            
+        }
+    }
+
     useEffect(() => {
         props.myFunc.checkIsLogin()
         onGetData()
@@ -84,7 +93,20 @@ export default function Home(props){
                         <div key={index}>
                             <span className='font-bold mr-3'>
                                 {value.username}
-                            </span>{value.tweet}
+                            </span>
+                            <span>
+                                {value.tweet}
+                            </span>
+                            <span>
+                                {
+                                    value.userId !== parseInt(localStorage.getItem('token'))?
+                                        null 
+                                    :
+                                        <button onClick={() => onDelete(value.id)} className='bg-red-700'>
+                                            Delete 
+                                        </button>
+                                }
+                            </span>
                         </div>
                     )
                 })
