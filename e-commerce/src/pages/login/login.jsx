@@ -41,6 +41,9 @@ export default function Login(props){
                 <button onClick={() => props.myFunc.onLogin(username.current.value, password.current.value)} className='my-bg-main my-light px-4  py-3 mt-3 rounded-full self-end'>
                     Login
                 </button>
+                <button onClick={props.myFunc1.onLoginWithGoogle} className='my-bg-main my-light px-4  py-3 mt-3 rounded-full self-end'>
+                    Login with Google
+                </button>
             </div>
         </div>
 
