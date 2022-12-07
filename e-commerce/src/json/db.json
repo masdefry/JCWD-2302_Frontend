@@ -770,21 +770,21 @@
   ],
   "cart": [
     {
-      "idProduct": 1,
+      "productsId": 1,
       "indexSize": 0,
       "indexTopping": 0,
       "indexSugar": 0,
-      "quantity": 2,
-      "userId": 1,
+      "quantity": 1,
+      "usersId": 1,
       "id": 1
     },
     {
-      "idProduct": 2,
+      "productsId": 2,
       "indexSize": 0,
       "indexTopping": 0,
       "indexSugar": 0,
-      "quantity": 4,
-      "userId": 1,
+      "quantity": 1,
+      "usersId": 1,
       "id": 2
     }
   ]

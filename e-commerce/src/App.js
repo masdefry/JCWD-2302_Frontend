@@ -9,6 +9,7 @@ import Login from './pages/login/login'
 import Home from './pages/home/home'
 import Menu from './pages/menu/menu';
 import DetailProduct from './pages/detail/detail';
+import Cart from './pages/cart/cart';
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
@@ -20,7 +21,8 @@ import {auth} from './firebase';
 import {
   GoogleAuthProvider, 
   signInWithPopup,
-  onAuthStateChanged} from 'firebase/auth'
+  onAuthStateChanged, 
+signOut} from 'firebase/auth'
 
   const provider = new GoogleAuthProvider();
 
@@ -67,6 +69,8 @@ export default function App(){
 
   let onLogout =() => {
     localStorage.removeItem('token')
+    localStorage.removeItem('tokenUid')
+    signOut(auth)
     setRedirect(false)
     setUsername('')
   }
@@ -113,6 +117,7 @@ export default function App(){
           <Route path='/login'  element={<Login myFunc={{onLogin}} myFunc1={{onLoginWithGoogle}} isRedirect={{redirect}} />} />
           <Route path='/menu'  element={<Menu />} />
           <Route path='/product/:id'  element={<DetailProduct />} />
+          <Route path='/cart'  element={<Cart />} />
         </Routes>
       <Toaster />
     </>

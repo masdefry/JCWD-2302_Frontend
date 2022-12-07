@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function DetailProduct(){
     const productId = useParams()
@@ -10,6 +11,7 @@ export default function DetailProduct(){
     const selected = useRef()
     const [data, setData] = useState(null)
     const [sizeToShow, setSizeToShow] = useState(0)
+    const [totalCart, setTotalCart] = useState(0)
 
     let onGetData = async() => {
         try {
@@ -30,23 +32,46 @@ export default function DetailProduct(){
 
     let onAddOrder = async() => {
         try {
+            let myToken
+            
+            if(localStorage.getItem('token')){
+                myToken = parseInt(localStorage.getItem('token'))
+            }else{
+                myToken = localStorage.getItem('tokenUid')
+            }
+
             let dataToSend = {
-                idProduct: data.id,
+                productsId: data.id,
                 indexSize: parseInt(selectSize.current.value),
                 indexTopping: parseInt(selectTopping.current.value),
                 indexSugar: parseInt(selectSugar.current.value),
                 quantity: 1,
-                userId: parseInt(localStorage.getItem('token'))
+                usersId: myToken
             }
-            let checkExist = await axios.get(`http://localhost:5000/cart?idProduct=${data.id}`)
+            let checkExist = await axios.get(`http://localhost:5000/cart?productsId=${data.id}&userId=${myToken}`)
 
             if(checkExist.data.length === 0){
                 let response = await axios.post('http://localhost:5000/cart', dataToSend)
+                toast('Add to cart success.');
+                onGetTotalCarts()
             }else{
                 let newQuantity = checkExist.data[0].quantity + 1
                 let update = await axios.patch(`http://localhost:5000/cart/${checkExist.data[0].id}`, {quantity: newQuantity})
-                console.log(update)
+                toast('Update quantity Success.');
             }   
+        } catch (error) {
+            
+        }
+    }
+
+    let onGetTotalCarts = async() => {
+        try {
+            let myToken = localStorage.getItem('token')? parseInt(localStorage.getItem('token')) : localStorage.getItem('tokenUid')
+          
+            if(myToken){
+                let response = await axios.get(`http://localhost:5000/cart?userId=${myToken}`)
+                setTotalCart(response.data.length)
+            }
         } catch (error) {
             
         }
@@ -54,6 +79,7 @@ export default function DetailProduct(){
 
     useEffect(() => {
         onGetData()
+        onGetTotalCarts()
     }, [])
 
     if(data === null){
@@ -132,10 +158,16 @@ export default function DetailProduct(){
                 </div>
             </div>
             <div className="flex justify-end px-24">
-                <button onClick={onAddOrder} className="my-bg-main my-light px-3 py-3 rounded-full">
-                    Add to order
-                </button>
+                <div style={{ position: 'relative' }}>
+                    <button onClick={onAddOrder} className="my-bg-main my-light px-3 py-3 rounded-full">
+                        Add to order
+                    </button>
+                    <div style={{ position: 'absolute', top: '-20px', right: '-10px', zIndex: '-1' }} className='bg-red-700 px-[10px] py-1 my-light rounded-full'>
+                        {totalCart}
+                    </div>
+                </div>
             </div>
+            <Toaster />
         </div>
     )
 }

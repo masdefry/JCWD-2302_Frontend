@@ -24,7 +24,9 @@ export default function Navbar(props){
                         :
                         <>
                             <span className='pl-10 font-bold'>
-                                Cards 
+                                <Link to='/cart'>
+                                    Cart    
+                                </Link> 
                             </span>
                             <span className='pl-10 font-bold'>
                                 <Link to='/menu'>
