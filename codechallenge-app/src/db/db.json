@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "username": "ryan",
+      "password": "abc123",
+      "status": false,
+      "id": 1
+    },
+    {
+      "username": "nayr",
+      "password": "abc123",
+      "status": false,
+      "id": 2
+    },
+    {
+      "username": "stephen",
+      "password": "abc123",
+      "status": false,
+      "id": 3
+    },
+    {
+      "username": "tito",
+      "password": "abc133",
+      "status": true,
+      "id": 4
+    }
+  ],
+  "post": [
+    {
+      "text": "abc",
+      "url": "abc",
+      "usersId": 4,
+      "id": 1
+    },
+    {
+      "text": "Stephen",
+      "url": "abc",
+      "usersId": 4,
+      "id": 2
+    },
+    {
+      "text": "Tito",
+      "url": "abc",
+      "usersId": 4,
+      "id": 3
+    },
+    {
+      "text": "asasas",
+      "url": "sasadcasvds",
+      "usersId": 4,
+      "id": 4
+    },
+    {
+      "text": "asasas",
+      "url": "sasadcasvds",
+      "usersId": 4,
+      "id": 5
+    },
+    {
+      "text": "as11313",
+      "url": "sasadcasvds13121",
+      "usersId": 4,
+      "id": 6
+    },
+    {
+      "text": "er12121",
+      "url": "sasadcasvds13121asa",
+      "usersId": 4,
+      "id": 7
+    },
+    {
+      "text": "er12121",
+      "url": "sasadcasvds13121asa",
+      "usersId": 4,
+      "id": 8
+    },
+    {
+      "text": "er12121",
+      "url": "sasadcasvds13121asa",
+      "usersId": 4,
+      "id": 9
+    },
+    {
+      "text": "er12121",
+      "url": "sasadcasvds13121asa",
+      "usersId": 4,
+      "id": 10
+    },
+    {
+      "text": "er12121",
+      "url": "sasadcasvds13121asa",
+      "usersId": 4,
+      "id": 11
+    }
+  ]
+}
