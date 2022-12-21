@@ -33,6 +33,7 @@ export default function Register(props){
             setDisabledButton(true)
             let result = await axios.post(`http://localhost:5004/users/register`, {username: inputUsername, email: inputEmail, password: inputPassword})
             toast(result.data.message);
+            username.current.value = ''
         } catch (error) {
             console.log(error)
             setMessage(error.response.data.message)

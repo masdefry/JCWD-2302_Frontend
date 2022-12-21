@@ -52,18 +52,16 @@ export default function App(){
 
   let onLogin = async(inputUsername, inputPassword) => {
       try {
-          // Step0. Get Value Input
-          // Step1. Check is Username & Password exist?
-          let response = await axios.get(`http://localhost:5000/users?username=${inputUsername}&password=${inputPassword}`)
-          if(response.data.length === 0) throw { message: 'Account not found' } // If data not found, throw error
-          localStorage.setItem('token', `${response.data[0].id}`)
-          setUsername(response.data[0].username)
-          toast('Login Success.');
+          let response = await axios.post(`http://localhost:5004/users/login`, {username: inputUsername, password: inputPassword})
+      
+          localStorage.setItem('token', `${response.data.data.id}`)
+          setUsername(response.data.data.username)
+          toast(response.data.message);
           setTimeout(() => {
             setRedirect(true)
           }, 3000)
       } catch (error) {
-          toast(error.message);
+          toast(error.response.data.message);
       }
   }
 
