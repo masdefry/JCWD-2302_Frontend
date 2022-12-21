@@ -31,22 +31,11 @@ export default function Register(props){
             if(!character.test(inputPassword)) throw { message: 'Password must contains number' }
 
             setDisabledButton(true)
-            let checkEmail = await axios.get(`http://localhost:5000/users?email=${inputEmail}`)
-            let checkUsername = await axios.get(`http://localhost:5000/users?username=${inputUsername}`)
-            
-            if(checkEmail.data.length === 0 && checkUsername.data.length === 0){
-                // Post
-                await axios.post('http://localhost:5000/users', {username: inputUsername, email: inputEmail, password: inputPassword})
-                username.current.value = ''
-                password.current.value = ''
-                email.current.value = ''
-                toast('Register Success.');
-                setMessage('')
-            }else{
-                throw { message: 'Email/username already register' }
-            }
+            let result = await axios.post(`http://localhost:5004/users/register`, {username: inputUsername, email: inputEmail, password: inputPassword})
+            toast(result.data.message);
         } catch (error) {
-            setMessage(error.message)
+            console.log(error)
+            setMessage(error.response.data.message)
         }finally{
             setDisabledButton(false)
         }
