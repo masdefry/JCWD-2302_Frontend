@@ -38,11 +38,11 @@ export default function Menu(){
     // ##### On Get Data & Filtering on Server
     let onGetData = async() => {
         try {
-            let response = await axios.get('http://localhost:5000/products?category=0')
-            let responseCategory = await axios.get('http://localhost:5000/category')
+            let response = await axios.get('http://localhost:5004/products/menu')
+            console.log(response.data.findListMenu)
 
-            setData(response.data)
-            setCategory(responseCategory.data)
+            setData(response.data.findListMenu)
+            // setCategory(responseCategory.data)
         } catch (error) {
             
         }
@@ -50,7 +50,7 @@ export default function Menu(){
 
     let onFilter = async(idx) => {
         let response = await axios.get(`http://localhost:5000/products?category=${idx}`)
-
+        
         setData(response.data)
         setCategorySelected(idx)
     }
@@ -91,7 +91,12 @@ export default function Menu(){
                                     <div key={index} className='flex items-center mt-3'>
                                         <div>
                                             <Link to={`/product/${value.id}`}>
-                                                <img src={value.image} style={{ width:'100px', height:'100px' }} className='rounded-full' />
+                                                {
+                                                    value.products_image !== null?
+                                                    <img src={value.products_image.url} style={{ width:'100px', height:'100px' }} className='rounded-full' />
+                                                    :
+                                                    null
+                                                }
                                             </Link>
                                         </div>
                                         <div className='pl-3'>
