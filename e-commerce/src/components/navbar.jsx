@@ -10,6 +10,7 @@ import {Link, useLocation} from 'react-router-dom'
 export default function Navbar(props){
     const location = useLocation() // Digunakan untuk mendapatkan pathname
 
+    console.log(props.data.username)
     
     return(
         <div>

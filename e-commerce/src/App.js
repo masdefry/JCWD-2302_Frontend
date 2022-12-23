@@ -28,7 +28,7 @@ signOut} from 'firebase/auth'
 
 export default function App(){
 
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState('ryan')
   const [redirect, setRedirect] = useState(false)
 
   useEffect(() => {
@@ -39,14 +39,16 @@ export default function App(){
 
   let checkIsLogin = async() => {
     try {
-      let getTokenId = localStorage.getItem('token')
-      if(getTokenId){
-        let response = await axios.get(`http://localhost:5000/users?id=${getTokenId}`)
-        setUsername(response.data[0].username)
-        setRedirect(true)
+      let token = localStorage.getItem('token')
+      if(token){
+        let response = await axios.post(`http://localhost:5004/users/keep-login`, {token})
+        console.log(response)
+        
+        setUsername(response.data.data)
+        // setRedirect(true)
       }
     } catch (error) {
-      
+      localStorage.removeItem('token')
     }
   }
 
@@ -54,13 +56,14 @@ export default function App(){
       try {
           let response = await axios.post(`http://localhost:5004/users/login`, {username: inputUsername, password: inputPassword})
       
-          localStorage.setItem('token', `${response.data.data.id}`)
+          localStorage.setItem('token', `${response.data.data.token}`)
           setUsername(response.data.data.username)
           toast(response.data.message);
           setTimeout(() => {
             setRedirect(true)
           }, 3000)
       } catch (error) {
+        console.log(error)
           toast(error.response.data.message);
       }
   }
